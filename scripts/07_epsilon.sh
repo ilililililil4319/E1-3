@@ -13,7 +13,7 @@ run "$PY -c 'import json
 from app.mac import mac
 from app.judge import judge
 d = json.load(open(\"data.json\", encoding=\"utf-8\"))
-print(\"케이스      Cross점수            X점수                ==비교   epsilon비교\")
+print(\"케이스      Cross점수            X점수                단순비교 epsilon비교\")
 for k, v in d[\"patterns\"].items():
     n = int(k.split(\"_\")[1]); f = d[\"filters\"][\"size_%d\" % n]
     a, b = mac(v[\"input\"], f[\"cross\"]), mac(v[\"input\"], f[\"x\"])
