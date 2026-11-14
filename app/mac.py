@@ -25,3 +25,13 @@ def mac(pattern, filt):
             total += p_row[c] * f_row[c]   # 곱해서(M) 누적(A)
     return total
 
+
+def mac_flat(pattern_flat, filter_flat):
+    """보너스 1: 1차원(길이 N²) MAC. for문 1개로 N²번 곱하고 더한다."""
+    length = len(pattern_flat)
+    if length != len(filter_flat):
+        raise ValueError("길이 불일치: {} vs {}".format(length, len(filter_flat)))
+    total = 0.0
+    for i in range(length):
+        total += pattern_flat[i] * filter_flat[i]
+    return total

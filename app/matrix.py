@@ -71,6 +71,13 @@ class Matrix:
         """MAC 연산이 빠르게 읽을 수 있도록 내부 2차원 리스트를 돌려준다."""
         return self._rows
 
+    def to_flat(self):
+        """보너스 1: 2차원 → 1차원(길이 N²)으로 펼친다. 위치 (r, c) → 인덱스 r*N + c"""
+        flat = []
+        for row in self._rows:
+            flat.extend(row)
+        return flat
+
     # ------------------------------------------------------------ 보여 주기
     def pretty(self, indent="  "):
         lines = []
