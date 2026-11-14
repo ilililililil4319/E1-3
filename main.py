@@ -3,6 +3,8 @@
 사용법: python3 main.py
   1. 사용자 입력 (3x3)
   2. data.json 분석
+  3. [보너스] 2차원 vs 1차원 성능 비교
+  4. [보너스] 패턴 생성기
   0. 종료
 
 data.json 위치: main.py와 같은 폴더 (환경 변수 NPU_DATA_PATH로 바꿀 수 있음)
@@ -20,6 +22,8 @@ DATA_PATH = os.environ.get("NPU_DATA_PATH", os.path.join(ROOT, "data.json"))
 MENU = [
     ("1", "사용자 입력 (3x3)", lambda: modes.run_user_mode()),
     ("2", "data.json 분석", lambda: modes.run_json_mode(DATA_PATH)),
+    ("3", "[보너스] 2차원 vs 1차원 성능 비교", lambda: modes.run_compare_mode()),
+    ("4", "[보너스] 패턴 생성기", lambda: modes.run_generator_mode()),
     ("0", "종료", None),
 ]
 
